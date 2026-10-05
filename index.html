@@ -41,3 +41,114 @@ h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--mu
 input,textarea{font:inherit;color:var(--text);padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);resize:vertical}
 .form .btn{justify-content:center}.note{font-size:.8rem;color:var(--muted)}
 .footer{border-top:1px solid var(--line);padding:36px 0;font-size:.9rem}.footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}.fl{display:flex;gap:18px}.fl a{color:var(--accent);text-decoration:none}.copy{width:100%}
+@media(max-width:900px){.g3{grid-template-columns:1fr 1fr}.hero-in,.contact{grid-template-columns:1fr}.editor{max-width:460px}}
+@media(max-width:720px){.burger{display:block}nav{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:14px;padding:20px 24px;background:var(--bg);border-bottom:1px solid var(--line)}nav.open{display:flex}.g3,.g2,.feat{grid-template-columns:1fr}.hero{padding:56px 0 48px}.section{padding:52px 0}.edu li{flex-direction:column;gap:4px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ---- visual refresh ---- */
+main{counter-reset:s}.section h2{counter-increment:s;font-size:clamp(1.7rem,3vw,2.2rem);font-weight:700;letter-spacing:-.03em;margin-bottom:36px}
+.section h2::before{content:counter(s,decimal-leading-zero) "  /";display:block;font:600 .78rem Inter,sans-serif;letter-spacing:.14em;color:var(--accent);margin-bottom:10px}
+.section{padding:96px 0}
+.nav a.on:not(.btn){color:var(--text);box-shadow:0 2px 0 var(--accent)}
+.logo{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--accent);color:#fff;font-size:.82rem}[data-theme="dark"] .logo{color:#101216}
+.hero{position:relative;overflow:hidden;padding:112px 0 96px;background:radial-gradient(55% 70% at 90% 0%,var(--soft),transparent 70%)}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--line) 1.2px,transparent 1.2px);background-size:26px 26px;-webkit-mask-image:linear-gradient(115deg,transparent 35%,#000 100%);mask-image:linear-gradient(115deg,transparent 35%,#000 100%);opacity:.9}
+.hero-in{position:relative}h1{font-size:clamp(2.3rem,5.4vw,3.9rem);font-weight:700;letter-spacing:-.035em;line-height:1.06}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);text-transform:none;letter-spacing:0;font-size:.82rem}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:34px;padding-top:22px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}.facts b{color:var(--text);font-weight:600}
+.editor{transform:rotate(1.2deg);box-shadow:0 24px 48px rgba(16,24,40,.22);border:1px solid #2a2e37}.editor .k{color:#c4a7ff}.editor .p{color:#8fd3ff}.editor .s{color:#9be3b0}.editor .c{color:#6b7280}
+.card{border-radius:14px}.chips li{border:1px solid color-mix(in srgb,var(--accent) 22%,transparent)}
+#sk .card{border-top:3px solid var(--accent)}#sk h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}#sk .chips li{background:var(--bg);color:var(--text);border-color:var(--line)}
+#pr{counter-reset:p}.proj{counter-increment:p;position:relative;padding:30px;overflow:hidden}
+.proj::before{content:counter(p,decimal-leading-zero);position:absolute;top:16px;right:22px;font:700 2.6rem Inter,sans-serif;color:var(--soft);line-height:1}
+.proj::after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--accent);transition:width .35s}.proj:hover::after{width:100%}.proj:hover{border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
+.proj h3{font-size:1.2rem;padding-right:46px;letter-spacing:-.01em}
+#ex{position:relative;border-left:2px solid var(--line);padding-left:30px;margin-left:6px}
+.exp{position:relative}.exp::before{content:"";position:absolute;left:-39px;top:30px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.eh h3{font-size:1.2rem}.role{padding:3px 12px;border-radius:999px;background:var(--soft);font-size:.82rem;align-self:center}
+.stats div{background:var(--soft);border:0;border-left:3px solid var(--accent);padding:12px 20px}.stats strong{font-size:2rem;letter-spacing:-.03em;color:var(--accent)}
+.edu li{align-items:baseline}.edu h3{font-size:1.08rem}.yrs{font-weight:600;color:var(--accent)}
+.contact{align-items:start}.form{padding:28px}input:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}.rv.in{opacity:1;transform:none}
+@media(max-width:720px){.editor{transform:none}.section{padding:64px 0}.hero{padding:64px 0 56px}#ex{padding-left:22px}.exp::before{left:-31px}}
+.portrait{position:relative;margin:0;justify-self:center;width:100%;max-width:400px}
+.portrait::before{content:"";position:absolute;inset:0;transform:translate(16px,16px);border:2px solid var(--accent);border-radius:22px;opacity:.55}
+.portrait img{position:relative;display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:22px;box-shadow:0 24px 48px rgba(16,24,40,.2)}
+.editor.float{position:absolute;left:-30px;bottom:-24px;transform:none;max-width:calc(100% - 20px);box-shadow:0 14px 30px rgba(16,24,40,.28)}.editor.float pre{padding:14px 16px;font-size:12.5px;line-height:1.6;white-space:pre-wrap}
+@media(max-width:720px){.portrait{max-width:320px;margin-bottom:24px}.editor.float{left:-8px}}
+.badge{position:absolute;z-index:2;display:grid;gap:1px;padding:12px 16px;background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(6px);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;box-shadow:0 12px 28px rgba(16,24,40,.18);max-width:calc(100% - 24px)}
+.badge small{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}.badge strong{font-size:.92rem;line-height:1.3}.badge span{font-size:.78rem;color:var(--muted)}
+.b-top{top:22px;left:-28px;animation:inL .8s .35s cubic-bezier(.2,.8,.2,1) both}.b-bot{bottom:22px;right:-28px;animation:inR .8s .6s cubic-bezier(.2,.8,.2,1) both}
+@keyframes inL{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:none}}@keyframes inR{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:none}}
+@media(max-width:720px){.b-top{left:-10px}.b-bot{right:-10px}}
+.portrait::after{content:"";position:absolute;inset:0;z-index:1;border-radius:22px;pointer-events:none;background:linear-gradient(to bottom,rgba(8,10,16,.58) 0%,rgba(8,10,16,0) 30%,rgba(8,10,16,0) 62%,rgba(8,10,16,.66) 100%)}
+.badge{background:none;border:0;border-radius:0;box-shadow:none;backdrop-filter:none;padding:0;max-width:78%;color:#fff;text-shadow:0 1px 14px rgba(0,0,0,.45)}
+.badge small{color:rgba(255,255,255,.72);letter-spacing:.16em;font-size:.66rem}.badge strong{color:#fff;font-size:1rem;font-weight:600;letter-spacing:-.01em}.badge span{color:rgba(255,255,255,.8);font-size:.8rem}
+.b-top{top:22px;left:22px;right:auto;animation:inL2 .9s .35s cubic-bezier(.2,.8,.2,1) both}.b-bot{bottom:22px;right:22px;left:auto;text-align:right;animation:inR2 .9s .6s cubic-bezier(.2,.8,.2,1) both}
+@keyframes inL2{from{opacity:0;transform:translateX(-36px)}to{opacity:1;transform:none}}@keyframes inR2{from{opacity:0;transform:translateX(36px)}to{opacity:1;transform:none}}
+@media(max-width:720px){.b-top{left:18px;top:18px}.b-bot{right:18px;bottom:18px}.badge strong{font-size:.92rem}}
+</style></head><body>
+<header class="nav"><div class="wrap nav-in"><a href="#home" class="logo" aria-label="Home">GSR</a>
+<button class="burger" id="bg" aria-expanded="false" aria-controls="menu">Menu</button>
+<nav id="menu" aria-label="Primary"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a><span id="navres"></span></nav></div></header>
+<main>
+<section id="home" class="hero"><div class="wrap hero-in"><div>
+<p class="eyebrow">Hyderabad, Telangana, India</p><h1>Hi, I'm Gnana Satvika Regalla.</h1>
+<p class="lead">Computer Science Engineering (Data Science) student building projects across software development, AI, blockchain, and web technologies.</p>
+<p class="muted">I enjoy turning ideas into practical solutions while continuously learning and exploring new technologies.</p>
+<div class="actions" id="heroacts"></div></div>
+<figure class="portrait"><img src="photo.jpg" width="560" height="700" alt="Portrait of Gnana Satvika Regalla, smiling in a cream shirt">
+<div class="badge b-top"><small>Studying</small><strong>B.Tech CSE (Data Science)</strong><span>Geethanjali College Of Technology</span></div>
+<div class="badge b-bot"><small>Based in</small><strong>Hyderabad, Telangana</strong><span>Software · AI · Blockchain</span></div></figure></div></section>
+<section id="about" class="section"><div class="wrap"><h2>About Me</h2><div class="about">
+<p>I'm a Computer Science Engineering (Data Science) student interested in software development, AI, blockchain, and emerging technologies. I enjoy building practical projects and learning through hands-on development.</p>
+<p>My projects have given me experience working with Java, Python, SQL, React, Node.js, Express.js, FastAPI, MySQL, Ethereum, Solidity, Ethers.js, IPFS, and Hugging Face Transformers.</p>
+<p>Alongside technology, I have experience in design, content creation, social media, and event work through TEDxGeethanjaliCET, Kukdukoo KIDS Festival, and independent Instagram content creation.</p></div></div></section>
+<section id="skills" class="section"><div class="wrap"><h2>Skills</h2><div class="grid g3" id="sk"></div></div></section>
+<section id="projects" class="section"><div class="wrap"><h2>Selected Projects</h2><div class="grid g2" id="pr"></div></div></section>
+<section id="experience" class="section"><div class="wrap"><h2>Experience &amp; Leadership</h2><div id="ex"></div></div></section>
+<section id="education" class="section"><div class="wrap"><h2>Education</h2><ul class="edu" id="ed"></ul></div></section>
+<section id="contact" class="section"><div class="wrap"><h2>Let's Connect</h2><div class="contact"><div>
+<p class="lead">I'm always interested in learning, building, collaborating, and exploring new opportunities.</p>
+<ul class="cl" id="cl"></ul></div>
+<form class="card form" id="fm"><label>Name<input name="n" required autocomplete="name"></label><label>Email<input name="e" type="email" required autocomplete="email"></label><label>Message<textarea name="m" rows="4" required></textarea></label>
+<button class="btn btn-p" type="submit">Send Message</button><p class="note">This opens your email app with the message prefilled; nothing is sent from this site.</p></form></div></div></section>
+</main>
+<footer class="footer"><div class="wrap"><div><strong>GNANA SATVIKA REGALLA</strong><p class="muted">Computer Science Engineering (Data Science)</p></div><div class="fl" id="fl"></div><p class="muted copy">© 2026 Gnana Satvika Regalla</p></div></footer>
+<script>
+// Add real URLs here; empty ones are hidden automatically.
+var L={email:"satvikaregalla1@gmail.com",linkedin:"",github:"",resume:""};
+var SK={"Programming":["Java","Python","C","JavaScript","SQL"],"Web & Backend":["React.js","Node.js","Express.js","FastAPI","REST APIs"],"Databases & Tools":["MySQL","Git","GitHub","VS Code"],"Blockchain":["Solidity","Ethereum","Web3","Smart Contracts","ERC-20","ERC-721","Ethers.js","MetaMask","IPFS","Pinata"],"AI":["Python","Hugging Face Transformers","Natural Language Processing","Named Entity Recognition","Large Language Models","LLM Security","AI Governance","Data Sanitization","Threat Intelligence"],"Core":["Data Structures & Algorithms","Object-Oriented Programming","Problem Solving","Database Management"]};
+var PR=[
+{t:"FitLife – Gym Kiosk",k:["Java","Java Standard Library"],d:"A console-based gym kiosk application that allows members to check in, view their membership history, upgrade memberships, and access gym information. Built to strengthen Java programming and problem-solving skills.",f:["Member check-in","Membership history","Membership upgrades","Gym information"],g:"",l:""},
+{t:"Stock Sense – Inventory & Warehouse Management System",k:["React","Node.js","Express.js","MySQL"],d:"A full-stack inventory management system designed to manage products, warehouses, suppliers, categories, and stock movements. Built with REST APIs and MySQL, with validation and transactional workflows for handling receipts, deliveries, transfers, and stock adjustments.",f:["Product management","Warehouse management","Supplier management","Category management","Stock movements","REST APIs","MySQL","Transactional workflows"],g:"",l:""},
+{t:"RepuChain – Blockchain-Based Campus Reputation System",k:["Ethereum","Solidity","Web3","React","Ethers.js","ERC-20","ERC-721","IPFS/Pinata","MetaMask"],d:"A decentralized campus reputation platform built on Ethereum to create transparent, tamper-resistant, and verifiable records of student achievements and participation.",f:["Teacher proposal and approval workflow","Role-based access control","CAMP ERC-20 reputation tokens","ERC-721 achievement badges","Bronze, Silver, and Gold milestones","MetaMask wallet integration","Ethereum Sepolia","IPFS/Pinata metadata storage"],g:"",l:""},
+{t:"Shield AI – Enterprise AI Governance Firewall",k:["React","FastAPI","Python","Hugging Face Transformers"],d:"An AI-powered security layer designed to protect sensitive information before it is processed by Large Language Models (LLMs).",f:["Named Entity Recognition","Regex-based detection","Sensitive data identification","Data sanitization","LLM security","Risk assessment","Threat intelligence","Secure document processing","PDF, DOCX, and TXT processing","Privacy-preserving AI workflows"],g:"",l:""}];
+var EX=[
+{o:"Instagram / Content Creation",r:"Independent Content Creator",d:"Independently managed an Instagram page for over a year, focusing on content creation, creative strategy, and audience engagement. Used content analytics and performance insights to experiment with different formats and improve reach and engagement.",st:[["208K+","accounts reached in the last 90 days"],["70%+","reach from non-followers"]],s:["Content Creation","Creative Strategy","Audience Engagement","Analytics"]},
+{o:"TEDxGeethanjaliCET",r:"Design Lead",d:"Working as a Design Lead, contributing to the design, deployment, and management of the website along with the overall visual identity of the event. Also involved in branding, social media creatives, and event visuals while collaborating with the team and working within real-world deadlines.",s:["UI/UX Design","Web Design","Website Management","Website Deployment","Graphic Design","Branding","Visual Design","Social Media Design","Team Leadership"]},
+{o:"Kukdukoo Kids Festival",r:"Volunteer – Content Team",d:"Contributed to the content team for a two-day festival, creating and managing promotional content for social media. Supported content planning and creative communication while collaborating with the team in a fast-paced event environment.",s:["Content Creation","Content Planning","Social Media","Creative Communication","Teamwork","Event Management"]}];
+var ED=[["Geethanjali College Of Technology","Bachelor of Technology, Computer Science Engineering (Data Science)","2024–2028"],["Resonance Junior College","Intermediate – MPC","2022–2024"],["Johnson Grammar School","I.C.S.E","2012–2022"]];
+var $=function(i){return document.getElementById(i)};
+function a(u,t,c){return u?'<a class="'+(c||"btn")+'" href="'+u+'" target="_blank" rel="noopener noreferrer">'+t+'</a>':""}
+function ch(x){return '<ul class="chips">'+x.map(function(i){return"<li>"+i+"</li>"}).join("")+"</ul>"}
+$("navres").innerHTML=a(L.resume,"View Resume","btn btn-p btn-s");
+$("heroacts").innerHTML='<a class="btn btn-p" href="#projects">View My Projects</a>'+a(L.github,"GitHub")+a(L.linkedin,"LinkedIn")+a(L.resume,"Resume");
+$("sk").innerHTML=Object.keys(SK).map(function(k){return'<article class="card"><h3>'+k+"</h3>"+ch(SK[k])+"</article>"}).join("");
+$("pr").innerHTML=PR.map(function(p){return'<article class="card proj"><h3>'+p.t+"</h3>"+ch(p.k)+"<p>"+p.d+"</p><h4>Key features</h4><ul class='feat'>"+p.f.map(function(i){return"<li>"+i+"</li>"}).join("")+"</ul><div class='actions'>"+a(p.g,"GitHub","btn btn-s")+a(p.l,"Live Demo","btn btn-p btn-s")+"</div></article>"}).join("");
+$("ex").innerHTML=EX.map(function(e){return'<article class="card exp"><div class="eh"><h3>'+e.o+'</h3><span class="role">'+e.r+"</span></div><p>"+e.d+"</p>"+(e.st?'<div class="stats">'+e.st.map(function(s){return"<div><strong>"+s[0]+"</strong><span>"+s[1]+"</span></div>"}).join("")+"</div>":"")+ch(e.s)+"</article>"}).join("");
+$("ed").innerHTML=ED.map(function(e){return"<li><div><h3>"+e[0]+'</h3><p class="muted">'+e[1]+'</p></div><span class="yrs">'+e[2]+"</span></li>"}).join("");
+$("cl").innerHTML='<li><span>Email</span><a href="mailto:'+L.email+'">'+L.email+"</a></li>"+(L.linkedin?"<li><span>LinkedIn</span>"+a(L.linkedin,"Profile","")+"</li>":"")+(L.github?"<li><span>GitHub</span>"+a(L.github,"Profile","")+"</li>":"");
+$("fl").innerHTML='<a href="mailto:'+L.email+'">Email</a>'+a(L.linkedin,"LinkedIn","")+a(L.github,"GitHub","");
+$("bg").onclick=function(){var o=$("menu").classList.toggle("open");this.setAttribute("aria-expanded",o);this.textContent=o?"Close":"Menu"};
+$("menu").onclick=function(e){if(e.target.tagName==="A"){$("menu").classList.remove("open");$("bg").textContent="Menu"}};
+$("fm").onsubmit=function(e){e.preventDefault();var f=e.target;location.href="mailto:"+L.email+"?subject="+encodeURIComponent("Portfolio message from "+f.n.value)+"&body="+encodeURIComponent(f.m.value+"\n\nFrom: "+f.n.value+" ("+f.e.value+")")};
+
+var cards=document.querySelectorAll(".card,.edu li");
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.1});
+cards.forEach(function(c){c.classList.add("rv");io.observe(c)});
+var links=document.querySelectorAll("#menu a:not(.btn)");
+var so=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){links.forEach(function(l){l.classList.toggle("on",l.getAttribute("href")==="#"+x.target.id)})}})},{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("section[id]").forEach(function(sec){so.observe(sec)});
+</script></body></html>
